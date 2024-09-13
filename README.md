@@ -30,6 +30,9 @@ At the end, special rules are used to calculate or modify the tone score:
 
 In this paper, several abstracting approaches have been considered:
 + **TextRank** is one of the oldest and most popular methods of automatic abstracting. The main idea of the method is to represent the text as a graph with the subsequent calculation of the importance of each syntactic unit.
+  
+  ![](https://cdn.prod.website-files.com/63119622d2a6edf1d171e0bc/662632de92dcb6def5ffbdd5_TextRank-algorithm-concept-graph.webp)
+  
 + **Embeddings** this approach calculates vector embeddings of sentences and computes a measure of closeness (often a cosine distance) between them. The most “close” sentences are then selected and placed in the final annotation.
 + **Greedy algorithm** Greedy algorithms are algorithms whose principle of operation is to make locally optimal solutions at each iteration. Since it is easier to find a local solution than a global one (if it is possible at all), such algorithms have good asymptotics.
 
@@ -39,6 +42,8 @@ In this paper, several abstracting approaches have been considered:
   
   As can be seen, this type of algorithm is very dependent on the first, randomly selected, sentence. Potentially, the algorithm can choose an unimportant sentence, then the whole annotation will be incorrect, or it will contain important sentences, but in a small amount.
 + **Transformer** The idea of this architecture is based on the attention mechanism. In transformers, the architecture consists of several encoders and decoders. However, the information that an encoder returns will not be represented as a single vector, it will be represented as multiple vectors.
+
+  ![](https://habrastorage.org/webt/dm/wa/pi/dmwapi3jsz1arewhc4xg3_hgevo.png)
 
   You can read more about transformers and the attention mechanism [here](https://arxiv.org/abs/1706.03762).
 
