@@ -11,7 +11,7 @@ The project is about analyzing natural language. Namely semantic analysis, autom
 ## Technologies
 Before analyzing the text directly, preprocessing with NLTK was performed. Namely, lemmatization, stemming, stop word removal and tokenization. Embeddings were also created using Word2Vec.
 
-A dictionary approach, specifically VaderSentiment, was chosen to determine the tone of the text.  
+A dictionary approach, specifically VaderSentiment, was chosen to determine the tone of the text. The T5 model was used for automatic annotation. And for thematic clustering KMeans was used.
 
 ## Semantic analysis
 
@@ -27,5 +27,9 @@ At the end, special rules are used to calculate or modify the tone score:
 + negative evaluation of a word combination if it contains at least one negative expression
 
 ## Automatic annotation
+
+In this paper, several abstracting approaches have been considered:
++ **TextRank** is one of the oldest and most popular methods of automatic abstracting. The main idea of the method is to represent the text as a graph with the subsequent calculation of the importance of each syntactic unit.
++ **Embeddings** this approach calculates vector embeddings of sentences and computes a measure of closeness (often a cosine distance) between them. The most “close” sentences are then selected and placed in the final annotation.
 
 ## Thematic clustering
