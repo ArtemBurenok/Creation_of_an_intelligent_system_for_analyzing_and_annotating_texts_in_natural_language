@@ -11,7 +11,7 @@ The project is about analyzing natural language. Namely semantic analysis, autom
 ## Technologies
 Before analyzing the text directly, preprocessing with NLTK was performed. Namely, lemmatization, stemming, stop word removal and tokenization. Embeddings were also created using Word2Vec.
 
-A dictionary approach, specifically VaderSentiment, was chosen to determine the tone of the text. The T5 model was used for automatic annotation. And for thematic clustering KMeans was used.
+A dictionary approach, specifically VaderSentiment, was chosen to determine the tone of the text. The [T5 model](https://arxiv.org/abs/1910.10683) was used for automatic annotation. And for thematic clustering KMeans was used.
 
 ## Semantic analysis
 
@@ -43,3 +43,12 @@ In this paper, several abstracting approaches have been considered:
   You can read more about transformers and the attention mechanism [here](https://arxiv.org/abs/1706.03762).
 
 ## Thematic clustering
+
+Basically, the clustering problem is solved in several ways: compiling dictionaries, using algorithms that establish semantic relations (latent Dirichlet placement LDA), applying classical clustering methods. 
+
+- The first approach, dictionary compilation, is very time-consuming and depends on the lexicon of the analyzed texts.
+- The second and third approaches, algorithmic, also have disadvantages. First of all, it is the non-obviousness of the learning process of the methods themselves. As a rule, these algorithms have a large number of parameters. Clustering methods cannot always determine the relationship between texts that are close in meaning and use different vocabulary.
+  
+In this paper, the latent Dirichlet placement and the K-means method were tested. And the K-means method was chosen.
+
+After clustering is performed and sentences are grouped. However, for convenience, it is necessary to annotate the sentences in each group. 
