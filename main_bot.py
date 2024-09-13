@@ -18,6 +18,7 @@ from sklearn.metrics.pairwise import euclidean_distances
 import torch
 from transformers import AutoTokenizer, AutoModel
 from transformers import T5ForConditionalGeneration, T5Tokenizer
+from secret_key import key
 
 
 tokenizer = AutoTokenizer.from_pretrained("cointegrated/LaBSE-en-ru")
@@ -28,7 +29,7 @@ model_T5 = T5ForConditionalGeneration.from_pretrained(MODEL_NAME)
 tokenizer_T5 = T5Tokenizer.from_pretrained(MODEL_NAME)
 
 nlp = spacy.load("ru_core_news_lg")
-bot = telebot.TeleBot('6545223985:AAHQDmIXaM95wrGqJXp4zEy5DRvsNlOOQps')
+bot = telebot.TeleBot(key)
 
 
 @bot.message_handler(commands=['start'])
