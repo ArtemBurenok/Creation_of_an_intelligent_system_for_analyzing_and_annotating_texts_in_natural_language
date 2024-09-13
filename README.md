@@ -1,1 +1,1 @@
-# Creation_of_an_intelligent_system_for_analyzing_and_annotating_texts_in_natural_language
+# Creation of an intelligent system for analyzing and annotating texts in natural language
