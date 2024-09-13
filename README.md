@@ -31,5 +31,12 @@ At the end, special rules are used to calculate or modify the tone score:
 In this paper, several abstracting approaches have been considered:
 + **TextRank** is one of the oldest and most popular methods of automatic abstracting. The main idea of the method is to represent the text as a graph with the subsequent calculation of the importance of each syntactic unit.
 + **Embeddings** this approach calculates vector embeddings of sentences and computes a measure of closeness (often a cosine distance) between them. The most “close” sentences are then selected and placed in the final annotation.
++ **Greedy algorithm** Greedy algorithms are algorithms whose principle of operation is to make locally optimal solutions at each iteration. Since it is easier to find a local solution than a global one (if it is possible at all), such algorithms have good asymptotics.
+
+  It happens that the process of finding an optimal solution gets stuck at a local point. To invent and prove correctness of a greedy algorithm is often quite a difficult task.
+  
+  Let us proceed directly to the implementation of the greedy algorithm for text annotation. At the beginning, a random sentence from the text is selected and the similarity metric with the existing annotation is computed for it (it will increase at the first iteration, because at the beginning the annotation is an empty string). After that, also randomly, other sentences are selected and the similarity metric with the desired annotation is computed. If the metric grows when adding sentences, then the sentence is included in the annotation, otherwise the process stops. Thus, a system of sentences with maximum similarity coefficient is obtained.
+  
+  As can be seen, this type of algorithm is very dependent on the first, randomly selected, sentence. Potentially, the algorithm can choose an unimportant sentence, then the whole annotation will be incorrect, or it will contain important sentences, but in a small amount.  
 
 ## Thematic clustering
