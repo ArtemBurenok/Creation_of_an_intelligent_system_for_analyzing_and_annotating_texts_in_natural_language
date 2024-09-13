@@ -37,6 +37,9 @@ In this paper, several abstracting approaches have been considered:
   
   Let us proceed directly to the implementation of the greedy algorithm for text annotation. At the beginning, a random sentence from the text is selected and the similarity metric with the existing annotation is computed for it (it will increase at the first iteration, because at the beginning the annotation is an empty string). After that, also randomly, other sentences are selected and the similarity metric with the desired annotation is computed. If the metric grows when adding sentences, then the sentence is included in the annotation, otherwise the process stops. Thus, a system of sentences with maximum similarity coefficient is obtained.
   
-  As can be seen, this type of algorithm is very dependent on the first, randomly selected, sentence. Potentially, the algorithm can choose an unimportant sentence, then the whole annotation will be incorrect, or it will contain important sentences, but in a small amount.  
+  As can be seen, this type of algorithm is very dependent on the first, randomly selected, sentence. Potentially, the algorithm can choose an unimportant sentence, then the whole annotation will be incorrect, or it will contain important sentences, but in a small amount.
++ **Transformer** The idea of this architecture is based on the attention mechanism. In transformers, the architecture consists of several encoders and decoders. However, the information that an encoder returns will not be represented as a single vector, it will be represented as multiple vectors.
+
+  You can read more about transformers and the attention mechanism [here](https://arxiv.org/abs/1706.03762).
 
 ## Thematic clustering
